@@ -3,7 +3,6 @@ import {
   Text,
   TextInput,
   View,
-  ScrollView,
   FlatList,
   Alert,
 } from "react-native";
@@ -23,6 +22,7 @@ type Participant = {
 
 export function Home() {
   const today = new Date().toDateString();
+
   const [participants, setParticipants] = useState<Participant[]>([]);
   const [newParticipantName, setNewParticipantName] = useState<string>("");
 
@@ -45,6 +45,7 @@ export function Home() {
       ...participants,
       { name: newParticipantName, id: generateId() },
     ]);
+
     clearTextInput();
   }
 
